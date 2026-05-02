@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['microphone']
+
+roboflow:
+  workspace: oriansoft
+  project: microphone-detection-yolo
+  version: 10
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/oriansoft/microphone-detection-yolo/dataset/10
