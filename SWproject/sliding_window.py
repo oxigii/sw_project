@@ -5,9 +5,10 @@ import sys
 import numpy as np
 from collections import deque
 from ultralytics import YOLO
+from frame_capture import save_detected_frame
 
 # ── 모델 로드 ──────────────────────────────────────────────
-person_model = YOLO("yolov8n.pt")
+person_model = YOLO("yolo11n.pt")
 mic_model = YOLO("runs/detect/train/weights/best.pt")
 
 PADDING = 5
@@ -228,6 +229,7 @@ def run(source, save):
 
                 if mic_detected:
                     mic_detected_frames += 1
+                    save_detected_frame(result)
 
                 cv2.putText(
                     result,

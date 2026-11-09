@@ -2,8 +2,9 @@ from ultralytics import YOLO
 import cv2
 import argparse
 import os
+from frame_capture import save_detected_frame
 
-person_model = YOLO("yolov8n.pt")
+person_model = YOLO("yolo11n.pt")
 mic_model = YOLO("runs/detect/train/weights/best.pt")
 
 PADDING = 20
@@ -166,6 +167,7 @@ def run_video(source, save):
 
         if mic_detected:
             mic_detected_frames += 1
+            save_detected_frame(result)
 
         cv2.putText(
             result,

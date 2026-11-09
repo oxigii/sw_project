@@ -1,10 +1,33 @@
-tracker/
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments and local configuration
+.venv/
 venv/
 env/
+.env
+.env.*
+!.env.example
 
-__pycache__/
-*.pyc
-
-*.mp4
-
+# IDE and OS files
 .vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary runtime files
+*.log
+*.pid
+
+# Captured video and generated training outputs
+*.mp4
+runs/
+**/runs/
+
+# Model weights (use Git LFS or GitHub Releases if these need to be distributed)
+*.pt
+
+# Existing repository rule
+tracker/
